@@ -3,7 +3,7 @@ import React from 'react'
 const Trackerpage = () => {
   return (
     <div>
-      Trackerr
+      Trackerrr
     </div>
   )
 }
