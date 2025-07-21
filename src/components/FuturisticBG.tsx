@@ -43,7 +43,7 @@ export default function FuturisticBG({ children }: { children?: React.ReactNode 
   return (
     <div
       ref={containerRef}
-      className="min-h-screen overflow-hidden relative" // removed bg-black
+      className="fixed inset-0 -z-10 pointer-events-none  overflow-hidden " // removed bg-black
     >
       <ParticleField particles={particles} />
       <NeuroGrid />

@@ -5,6 +5,7 @@ import { BrainCircuit } from 'lucide-react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Button } from './ui/button';
+import ThemeToggle  from "./ui/theme-toggle"
 
 const Navbar = () => {
   const { isSignedIn } = useUser();
@@ -18,12 +19,13 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         
         {/* Logo */}
+
         <Link href="/" className="flex items-center">
           <BrainCircuit className="text-white animate-pulse mr-3 h-8 w-8" />
           <span className="font-sans text-white font-bold text-2xl">Mind</span>
           <span className="text-2xl font-sans font-bold animate-pulse text-cyan-400">Flow</span>
-        </Link>
-
+        </Link> 
+  
         {isSignedIn ? (
           <div className="flex items-center gap-6">
             {/* Menu */}
@@ -50,8 +52,12 @@ const Navbar = () => {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-
             <UserButton/>
+            
+            <div className="flex items-center gap-3">
+              <ThemeToggle/>
+            </div>
+
           </div>
         ) : (
           <div className="flex items-center gap-3">
