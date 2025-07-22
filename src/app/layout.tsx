@@ -38,7 +38,7 @@ export default function RootLayout({
         <FuturisticBG/>
        <Navbar/>
         {/* <Navbar/> */}
-        <main className="pt-24 flex-grow"> {children}</main>
+        <main className="flex-grow"> {children}</main>
         <Footer/>
         </Providers>
       </body>
