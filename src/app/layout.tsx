@@ -1,3 +1,4 @@
+"use client"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -5,8 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FuturisticBG from "@/components/FuturisticBG";
-import { Providers } from "@/components/ui/providers";
-
+import { SessionProvider } from "@/lib/session-context";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Providers>
-        <FuturisticBG/>
-       <Navbar/>
-        {/* <Navbar/> */}
-        <main className="flex-grow"> {children}</main>
-        <Footer/>
-        </Providers>
-      </body>
-    </html>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <SessionProvider>
+            <FuturisticBG />
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <Toaster position="top-center" richColors closeButton />
+          </SessionProvider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
