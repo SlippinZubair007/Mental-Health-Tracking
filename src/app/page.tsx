@@ -17,7 +17,6 @@ const Home = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const [showDialog, setShowDialog] = useState<boolean>(false);
 
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -74,42 +73,64 @@ const Home = () => {
             to listen, understand, and guide you through lifes journey.
           </p>
 
-          <motion.div 
-          className="w-full max-w-[600px] mx-auto space-y-6 py-8"
-          initial={{opacity:0,y:20}}
-          animate={{opacity:mounted ? 1 : 0 , y: mounted ? 0 : 20}}
-          transition={{delay:0.3,duration:0.8}}
+          <motion.div
+            className="w-full max-w-[600px] mx-auto space-y-6 py-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
             <div className="space-y-2 text-center">
               <p className="text-sm text-muted-foreground font-medium">
-               How are you feeling today?
+                How are you feeling today?
               </p>
             </div>
           </motion.div>
-          
+
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <Link href="/main">
             <Button
               size="lg"
               onClick={() => setShowDialog(true)}
               className="relative group h-12 px-8 rounded-full bg-gradient-to-r from-primary via-primary/90 to-secondary hover:to-primary shadow-lg shadow-primary/20 transition-all duration-500 hover:shadow-xl hover:shadow-primary/30"
             >
-                <span className="relative z-10 font-medium flex items-center gap-2">
-                  Begin Your Journey
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-size-200 bg-pos-0 group-hover:bg-pos-100" />
+              <span className="relative z-10 font-medium flex items-center gap-2">
+                Begin Your Journey
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-size-200 bg-pos-0 group-hover:bg-pos-100" />
             </Button>
-            </Link>
           </motion.div>
         </motion.div>
-        
       </section>
+
+      {/* 🧠 MODAL DIALOG */}
+      {showDialog && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+          <div className="bg-white dark:bg-black p-6 rounded-2xl shadow-2xl max-w-md w-full mx-4 text-center">
+            <h2 className="text-xl font-bold mb-2">Welcome!</h2>
+            <p className="text-muted-foreground mb-4">
+              You are about to begin your journey. Are you ready?
+            </p>
+            <div className="flex justify-center gap-4 mt-4">
+              <Button
+                variant="outline"
+                onClick={() => setShowDialog(false)}
+              >
+                Cancel
+              </Button>
+              <Link href="/main">
+                <Button onClick={() => setShowDialog(false)}>
+                  Let's Go
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
