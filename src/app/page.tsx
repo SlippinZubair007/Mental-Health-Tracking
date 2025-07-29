@@ -13,9 +13,9 @@ const Home = () => {
     color: string;
   }
 
-  const [emotion, setEmotions] = useState(0);
+  const [emotion] = useState(0);
   const [mounted, setMounted] = useState(false);
-  const [showDialog, setShowDialog] = useState(false);
+  const [ setShowDialog] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -70,7 +70,7 @@ const Home = () => {
           {/* Description */}
           <p className="mt-6 sm:mt-10 max-w-[600px] mx-auto text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed tracking-wide">
             Experience a new way of emotional support. Our AI companion is here
-            to listen, understand, and guide you through life's journey.
+            to listen, understand, and guide you through lifes journey.
           </p>
 
           <motion.div 
