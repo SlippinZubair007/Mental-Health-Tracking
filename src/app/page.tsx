@@ -15,7 +15,8 @@ const Home = () => {
 
   const [emotion] = useState(0);
   const [mounted, setMounted] = useState<boolean>(false);
-  const [ setShowDialog] = useState<boolean>(false);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
+
 
   useEffect(() => {
     setMounted(true);
