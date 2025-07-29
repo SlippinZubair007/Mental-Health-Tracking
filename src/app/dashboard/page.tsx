@@ -130,7 +130,6 @@ const MentalHealthDashboard: React.FC = () => {
   const { user } = useUser();
   
   const [entries, setEntries] = useState<MentalHealthEntry[]>(mockEntries);
-  const [selectedTimeRange, setSelectedTimeRange] = useState<string>('7d');
   const [loading, setLoading] = useState(false);
 
 useEffect(() => {
