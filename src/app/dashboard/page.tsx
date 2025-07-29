@@ -15,25 +15,12 @@ interface MentalHealthEntry {
   user_id: string;
 }
 
-interface ChartDataPoint {
-  date: string;
-  mood: number;
-  stress: number;
-  sleep: number;
-}
 
 interface ActivityData {
   name: string;
   value: number;
 }
 
-interface SummaryStats {
-  avgMood: string;
-  avgStress: string;
-  totalSleep: number;
-  improvement: 'positive' | 'stable' | 'needs attention';
-  totalEntries: number;
-}
 
 // Mood mapping function
 const moodToNumber = (mood: string | number): number => {
