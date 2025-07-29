@@ -49,13 +49,13 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-light text-white/90 leading-tight">
-                Let's
+                Lets
                 <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-medium">
                   Connect
                 </span>
               </h1>
               <p className="text-lg text-white/70 font-light max-w-md">
-                Reach out to us for any inquiries, feedback, or support. We're here to help you on your mental health journey.
+                Reach out to us for any inquiries, feedback, or support. We are here to help you on your mental health journey.
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-transparent transition-all duration-300"
-                  placeholder="What's this about?"
+                  placeholder="Whats this about?"
                   required
                 />
               </div>
@@ -183,7 +183,7 @@ export default function ContactPage() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center space-x-2 text-white/40 text-sm">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-white/40"></div>
-            <span>We'll get back to you within 24 hours</span>
+            <span>We will get back to you within 24 hours</span>
             <div className="w-8 h-px bg-gradient-to-l from-transparent to-white/40"></div>
           </div>
         </div>

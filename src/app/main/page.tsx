@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Brain, Target, Moon, Zap, FileText, Sparkles } from 'lucide-react';
 
-const page = () => {
+const Page = () => {
   interface Emotion {
     value: number;
     color: string;
@@ -427,4 +427,4 @@ const { error: goalError } = await supabase
   )
 }
 
-export default page
+export default Page
