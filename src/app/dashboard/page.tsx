@@ -258,7 +258,7 @@ useEffect(() => {
     
     return (
       <div className="group relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl blur-sm"></div>
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl blur-sm"></div>
         <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-5 mb-4 hover:bg-white/10 transition-all duration-300 hover:border-white/20">
           <div className="flex items-center justify-between mb-3">
             <span className="text-white/90 font-medium text-sm tracking-wide">
@@ -304,14 +304,14 @@ useEffect(() => {
   // Show loading while fetching data
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+      <div className="min-h-screen flex items-center justify-centerp-6">
         <div className="text-white text-xl">Loading your wellness data...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+    <div className="min-h-screen  p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">
