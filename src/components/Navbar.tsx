@@ -16,7 +16,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/dashboard", label: "Neural Dashboard" },
   { href: "/main", label: "Quantum Analysis" },
-  { href: "/settings", label: "Bio Settings" },
   { href: "/therapy", label: "Therapist" },
   { href: "/contact", label: "Contact" },
 ];

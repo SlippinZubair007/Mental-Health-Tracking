@@ -6,6 +6,7 @@ import { vapi } from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Brain, BrainCog } from "lucide-react";
 
 type Message = {
   type?: string;
@@ -53,15 +54,7 @@ const GenerateProgramPage = () => {
     }
   }, [messages]);
 
-  // Redirect to profile
-  useEffect(() => {
-    if (callEnded) {
-      const redirectTimer = setTimeout(() => {
-        router.push("/profile");
-      }, 1500);
-      return () => clearTimeout(redirectTimer);
-    }
-  }, [callEnded, router]);
+  // Removed automatic redirect useEffect
 
   useEffect(() => {
     const handleCallStart = () => {
@@ -149,11 +142,10 @@ const GenerateProgramPage = () => {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold font-mono">
-            <span>Generate Your </span>
-            <span className="text-primary uppercase">Fitness Program</span>
+            <span>Let it flow</span>
           </h1>
           <p className="text-muted-foreground mt-2">
-            Have a voice conversation with Surfer.AI assistant to create your personalized plan
+            Have a voice conversation with Mindflow assistant to create your personalized plan
           </p>
         </div>
 
@@ -195,17 +187,12 @@ const GenerateProgramPage = () => {
 
                 <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-secondary/10"></div>
-                  <img
-                    src="/ai-avatar.jpg"
-                    alt="AI Assistant"
-                    className="w-full h-full object-cover"
-                  />
+                  <BrainCog className="w-15 h-15"/>
                 </div>
               </div>
 
-              <h2 className="text-xl font-bold text-foreground">Surfer.AI</h2>
-              <p className="text-sm text-muted-foreground mt-1">Part time - Fitness & Diet Coach</p>
-              <p className="text-sm text-muted-foreground mt-1">Full time - Herald of Galactus</p>
+              <h2 className="text-xl font-bold text-foreground">Mindflow</h2>
+              <p className="text-sm text-muted-foreground mt-1">Therapist</p>
 
               {/* SPEAKING INDICATOR */}
 
@@ -226,7 +213,7 @@ const GenerateProgramPage = () => {
                     : callActive
                       ? "Listening..."
                       : callEnded
-                        ? "Redirecting to profile..."
+                        ? "Call completed"
                         : "Waiting..."}
                 </span>
               </div>
@@ -270,7 +257,7 @@ const GenerateProgramPage = () => {
               {messages.map((msg, index) => (
                 <div key={index} className="message-item animate-fadeIn">
                   <div className="font-semibold text-xs text-muted-foreground mb-1">
-                    {msg.role === "assistant" ? "CodeFlex AI" : "You"}:
+                    {msg.role === "assistant" ? "Mindflow AI" : "You"}:
                   </div>
                   <p className="text-foreground">{msg.content}</p>
                 </div>
@@ -280,7 +267,7 @@ const GenerateProgramPage = () => {
                 <div className="message-item animate-fadeIn">
                   <div className="font-semibold text-xs text-primary mb-1">System:</div>
                   <p className="text-foreground">
-                    Your fitness program has been created! Redirecting to your profile...
+                    One step at a time. Remember to take care of yourself
                   </p>
                 </div>
               )}
@@ -293,13 +280,11 @@ const GenerateProgramPage = () => {
           <Button
             className={`w-40 text-xl rounded-3xl ${
               callActive
-                ? "bg-destructive hover:bg-destructive/90"
-                : callEnded
-                  ? "bg-green-600 hover:bg-green-700"
-                  : "bg-primary hover:bg-primary/90"
-            } text-white relative`}
+                ? "bg-destructive hover:bg-cyan-500"
+                : "bg-primary hover:bg-cyan-700"
+            } text-black relative`}
             onClick={toggleCall}
-            disabled={connecting || callEnded}
+            disabled={connecting}
           >
             {connecting && (
               <span className="absolute inset-0 rounded-full animate-ping bg-primary/50 opacity-75"></span>
@@ -310,11 +295,10 @@ const GenerateProgramPage = () => {
                 ? "End Call"
                 : connecting
                   ? "Connecting..."
-                  : callEnded
-                    ? "View Profile"
-                    : "Start Call"}
+                  : "Start Call"}
             </span>
           </Button>
+
         </div>
       </div>
     </div>
