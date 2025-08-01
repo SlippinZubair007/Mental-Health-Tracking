@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🧠 Mental Health Tracker App
+A beautifully designed, fullstack mental wellness companion built with Next.js + TypeScript, integrating Vapi AI voice agents for conversational support. The app helps users track mood, log sleep and stress levels, write journal entries, and set personal goals, while offering secure authentication, real-time storage, and responsive UI.
 
-## Getting Started
+🌟 Key Features
+🎙️ Voice Assistant powered by Vapi AI for conversational well-being check-ins
 
-First, run the development server:
+😊 Daily Mood Tracking with emotion selection
 
-```bash
+💤 Sleep Hours Logging
+
+😟 Stress Level Recording
+
+📓 Journal Entries with secure storage
+
+🎯 Goal Setting to support healthy habits
+
+🔐 User Authentication via Clerk
+
+☁️ Supabase Backend for realtime storage
+
+💅 Modern UI built with Tailwind, shadcn/ui, Magic UI, and Lucide Icons
+
+🧱 Tech Stack
+Tech	Role
+Next.js	Frontend framework with SSR/ISR support
+TypeScript	Static type checking
+Vapi AI	Conversational voice agents
+Supabase	Backend database and API
+Clerk	Auth and session management
+Tailwind CSS	Styling using utility-first CSS
+shadcn/ui	Composable and accessible UI components
+Magic UI	Enhanced animations & visual polish
+Lucide Icons	Clean and consistent icon set
+
+🗂️ Project Structure
+bash
+Copy
+Edit
+/app              # Next.js App Routes & Layouts
+/components       # Reusable UI and form components
+/lib              # Utility functions and Supabase/Clerk setup
+/types            # Custom TypeScript definitions
+/styles           # Tailwind and global CSS
+/public           # Static assets (icons, images)
+.env.local        # Your environment config
+📥 Environment Variables
+Create a .env.local file in the root with:
+
+env
+Copy
+Edit
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+VAPI_API_KEY=your_vapi_api_key
+🚀 Getting Started
+Clone the repo
+
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/mental-health-tracker.git
+cd mental-health-tracker
+Install dependencies
+
+bash
+Copy
+Edit
+npm install
+Run locally
+
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔍 Core Modules
+/components/Tracker.tsx – Mood, Sleep, Stress input
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+/components/Journal.tsx – Daily journal UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/components/Goals.tsx – Goal creation and status
 
-## Learn More
+/components/VoiceAgent.tsx – Vapi AI integration
 
-To learn more about Next.js, take a look at the following resources:
+/lib/supabase.ts – Realtime syncing with Supabase
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/lib/clerk.ts – User auth handling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📊 Charts & Insights
+Uses Recharts to visualize:
 
-## Deploy on Vercel
+Mood trends over time
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sleep duration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Stress patterns
+
+Goal progress
+
+🎨 UI Components
+shadcn/ui: Accessible building blocks (dialogs, cards, inputs)
+
+Magic UI: Motion effects and beautiful layouts
+
+Lucide: Icon system for clean UI feedback
+
+✈️ Deployment
+Best deployed on Vercel or any Node-based platform:
+
+Push to GitHub
+
+Connect to Vercel
+
+Set up environment variables
+
+Deploy!
+
+🙌 Contributing
+We welcome contributions to improve the app!
+
+bash
+Copy
+Edit
+# Fork it
+git checkout -b feature/my-feature
+git commit -m "Add feature"
+git push origin feature/my-feature
+📄 License
+MIT License – Free to use and modify with attribution.
+
+💚 Credits
+Vapi AI
+
+Supabase
+
+Clerk
+
+shadcn/ui
+
+Magic UI
+
+Lucide Icons
+
