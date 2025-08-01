@@ -124,7 +124,7 @@ const Home = () => {
               </Button>
               <Link href="/main">
                 <Button onClick={() => setShowDialog(false)}>
-                  Let's Go
+                  Lets Go
                 </Button>
               </Link>
             </div>
