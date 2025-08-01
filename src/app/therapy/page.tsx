@@ -6,7 +6,7 @@ import { vapi } from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Brain, BrainCog } from "lucide-react";
+import { BrainCog } from "lucide-react";
 
 type Message = {
   type?: string;
@@ -24,7 +24,7 @@ const GenerateProgramPage = () => {
   const [callEnded, setCallEnded] = useState(false);
 
   const { user } = useUser();
-  const router = useRouter();
+
 
   const messageContainerRef = useRef<HTMLDivElement>(null);
 
