@@ -56,7 +56,7 @@ export default function FuturisticBG({ children }: { children?: React.ReactNode 
             className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
             style={{
               background: `radial-gradient(circle,
-                rgba(40, 0, 90, ${0.25 + i * 0.05}) 0%,
+                rgba(40, 0, 90, ${0.25 + i * 0.05}) 1%,
                 rgba(10, 0, 50, ${0.12 + i * 0.03}) 30%,
                 transparent 70%)`,
               left: `${20 + i * 30}%`,
